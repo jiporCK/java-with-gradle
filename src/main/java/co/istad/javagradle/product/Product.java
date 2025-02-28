@@ -1,6 +1,5 @@
 package co.istad.javagradle.product;
 
-
 import lombok.*;
 
 @Setter

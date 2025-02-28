@@ -23,6 +23,13 @@ dependencies {
 
 
     testImplementation 'junit:junit:4.13.2'
+
+    // Bakong sdk
+    implementation 'kh.gov.nbc.bakong_khqr:sdk-java:1.0.0.11'
+
+	// QR Code
+	implementation 'com.google.zxing:core:3.5.1'
+	implementation 'com.google.zxing:javase:3.5.1'
 }
 
 application {
