@@ -8,11 +8,17 @@ import java.util.List;
 
 public class ProductController {
 
-    private final ProductService productService = new ProductServiceImpl();
+    private final ProductService productService = ProductServiceImpl.INSTANCE;
 
     public List<Product> getAllProducts() {
 
         return productService.getProducts();
+
+    }
+
+    public Product addProduct(Product product) {
+
+        return productService.addProduct(product);
 
     }
 

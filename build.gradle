@@ -1,5 +1,4 @@
 plugins {
-    id 'java'
     id 'application'
 }
 
@@ -11,6 +10,10 @@ java {
 
 repositories {
     mavenCentral()
+}
+
+tasks.withType(JavaExec).configureEach {
+    jvmArgs = ["-Dorg.gradle.java.home=/usr/lib/jvm/java-17-openjdk-amd64"]
 }
 
 dependencies {
@@ -30,6 +33,13 @@ dependencies {
 	// QR Code
 	implementation 'com.google.zxing:core:3.5.1'
 	implementation 'com.google.zxing:javase:3.5.1'
+
+    // Object mapper
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.16.1'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.16.1'
+
 }
 
 application {

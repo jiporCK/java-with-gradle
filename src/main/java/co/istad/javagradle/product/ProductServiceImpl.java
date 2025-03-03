@@ -2,16 +2,22 @@ package co.istad.javagradle.product;
 
 import java.util.List;
 
-public class ProductServiceImpl implements ProductService {
+public enum ProductServiceImpl implements ProductService {
 
-    private final ProductDB productDB = new ProductDB();
+    INSTANCE;
 
-    public ProductServiceImpl() {
-    }
+    private final ProductDB productDB = ProductDB.INSTANCE;
 
     @Override
     public List<Product> getProducts() {
+
         return productDB.getProducts();
+
+    }
+
+    @Override
+    public Product addProduct(Product product) {
+        return productDB.addProduct(product);
     }
 
 }
